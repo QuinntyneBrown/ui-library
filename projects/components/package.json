@@ -1,6 +1,7 @@
 {
-  "name": "components",
+  "name": "@quinntyne/components",
   "version": "0.0.1",
+  "description": "Reusable Angular UI components by Quinntyne Brown (header and layout primitives).",
   "peerDependencies": {
     "@angular/common": "^21.0.0",
     "@angular/core": "^21.0.0",
@@ -10,5 +11,21 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "keywords": [
+    "angular",
+    "components",
+    "material",
+    "ui",
+    "header"
+  ],
+  "author": "Quinntyne Brown",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quinntynebrown/ui-library.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }

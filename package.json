@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "release:components": "cd projects/components && standard-version"
   },
   "prettier": {
     "printWidth": 100,
@@ -40,6 +41,7 @@
     "@angular/compiler-cli": "^21.0.0",
     "jsdom": "^27.1.0",
     "ng-packagr": "^21.0.0",
+    "standard-version": "^9.5.0",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
   }

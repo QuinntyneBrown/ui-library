@@ -1,59 +1,152 @@
-# UiLibrary
+# UI Library
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.3.
+An Angular workspace that contains a reusable component library and a playground application for developing and testing UI components in isolation.
 
-## Development server
+The workspace currently includes:
 
-To start a local development server, run:
+- **components** – an Angular library that exposes reusable UI pieces (for example, a configurable, sticky `q-header` component).
+- **playground** – a standalone Angular application used to develop, preview, and manually test the components from the library.
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Getting Started
 
-## Code scaffolding
+### Prerequisites
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Node.js (LTS recommended)
+- npm (comes with Node.js)
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Install dependencies from the workspace root:
 
 ```bash
-ng generate --help
+npm install
 ```
 
-## Building
+### Run the Playground App
 
-To build the project run:
+From the workspace root:
 
 ```bash
-ng build
+npm start
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+This runs `ng serve` for the `playground` project. Open your browser at http://localhost:4200/ to see the demo application with the shared UI components.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Projects Overview
+
+### Components Library (`projects/components`)
+
+The **components** project is an Angular library that contains reusable UI building blocks. It is exported via the library public API in `projects/components/src/public-api.ts` and is intended to be consumed by Angular applications.
+
+Key points:
+
+- Built as an Angular library using `ng-packagr`.
+- Uses the `q` selector prefix (for example, `q-header`).
+- Designed to be tree-shakeable and side-effect free.
+
+**Example: q-header**
+
+The `Header` component provides a configurable, reusable application header that can be made sticky and given a title.
+
+Usage inside an Angular template:
+
+```html
+<q-header [title]="'Playground'" [sticky]="true">
+  <!-- optional projected actions (buttons, links, etc.) -->
+</q-header>
+```
+
+### Playground App (`projects/playground`)
+
+The **playground** project is a simple Angular application used to:
+
+- Integrate and visually test components from the **components** library.
+- Experiment with layouts, theming, and responsiveness.
+
+It imports components from the library (for example `Header`) and renders them in a realistic page shell.
+
+---
+
+## Development Workflow
+
+### Local Development
+
+1. Install dependencies (once):
+	```bash
+	npm install
+	```
+2. Start the playground app:
+	```bash
+	npm start
+	```
+3. Make changes in the library (for example under `projects/components/src/lib/...`) and use the playground app to verify behavior.
+
+### Building the Components Library
+
+To produce a distributable build of the library:
 
 ```bash
-ng test
+ng build components
 ```
 
-## Running end-to-end tests
+The build output is placed in `dist/components`. This output can be published to an internal registry or consumed by other Angular applications.
 
-For end-to-end (e2e) testing, run:
+---
+
+## Using the Library in Another Angular App
+
+Once built and published (or linked locally), you can consume the library from another Angular application as follows:
+
+1. Install the package (example, if published as `@your-scope/ui-library`):
+	```bash
+	npm install @your-scope/ui-library
+	```
+2. Import and use a component in a standalone component:
+	```ts
+	import { Component } from '@angular/core';
+	import { Header } from '@your-scope/ui-library';
+
+	@Component({
+	  selector: 'app-root',
+	  standalone: true,
+	  imports: [Header],
+	  template: `<q-header [title]="'My App'"></q-header>`,
+	})
+	export class AppComponent {}
+	```
+
+Update the actual package name once the library is published.
+
+---
+
+## Testing
+
+Unit tests are executed via Angular’s `ng test` command, backed by Vitest in this workspace.
+
+Run tests from the workspace root:
 
 ```bash
-ng e2e
+npm test
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+This runs the unit tests for all configured projects.
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Useful Scripts
+
+Defined in `package.json` at the workspace root:
+
+- `npm start` – serve the playground app in development mode.
+- `npm run build` – build all configured Angular projects.
+- `npm run watch` – build in watch mode (development configuration).
+- `npm test` – run unit tests.
+
+---
+
+## Further Reading
+
+- Angular documentation: https://angular.dev
+- Angular CLI command reference: https://angular.dev/tools/cli

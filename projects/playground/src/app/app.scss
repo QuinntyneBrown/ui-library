@@ -1,0 +1,15 @@
+ :host {
+	display: block;
+	min-height: 100vh;
+
+	q-header {
+		position: sticky;
+		top: 0;
+		z-index: 1000;
+	}
+
+	.main {
+		padding-top: 0.5rem;
+	}
+}
+

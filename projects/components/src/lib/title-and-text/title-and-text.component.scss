@@ -1,0 +1,40 @@
+.title-and-text {
+  user-select: none;
+  cursor: pointer;
+  padding: 10px;
+
+  .title-and-text__title {
+    font-size: 30px;
+    margin: 0;
+    padding: 0 0 15px 0;
+    border-bottom: 1px solid #666;
+  }
+
+  .title-and-text__text {
+    font-size: 16px;
+    line-height: 26px;
+    margin: 30px 0 0 0;
+    padding: 0.1px;
+    position: relative;
+  }
+
+  .title-and-text--truncated {
+    max-height: 300px;
+    overflow: hidden;
+    background: -webkit-linear-gradient(#000, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@media (min-width: 576px) {
+  // Small screens and up
+}
+
+@media (min-width: 768px) {
+  // Medium screens and up
+}
+
+@media (min-width: 992px) {
+  // Large screens and up
+}

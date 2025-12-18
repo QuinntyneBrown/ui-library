@@ -1,0 +1,29 @@
+<div class="ribbon" (window:resize)="onResize()">
+  <div class="ribbon__container"
+       [style.grid-template-columns]="gridTemplateColumns"
+       [style.transform]="'translate3d(' + (-translateX) + 'px, 0, 0)'"
+       (touchstart)="onTouchStart($event)"
+       (touchmove)="onTouchMove($event)"
+       (touchend)="onTouchEnd()">
+    <div class="ribbon__item"
+         *ngFor="let item of items; let i = index"
+         [class.ribbon--active]="item === activeItem"
+         (click)="onItemClick(item)">
+      {{ item.label }}
+    </div>
+  </div>
+
+  <button mat-icon-button
+          class="ribbon__button ribbon--previous"
+          [class.ribbon--button-disabled]="!canGoPrevious"
+          (click)="handlePrevious()">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+
+  <button mat-icon-button
+          class="ribbon__button ribbon--next"
+          [class.ribbon--button-disabled]="!canGoNext"
+          (click)="handleNext()">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</div>

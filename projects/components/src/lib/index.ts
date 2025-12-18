@@ -11,3 +11,14 @@ export * from './loading-bar';
 export * from './phone-number';
 export * from './unsupported-browser';
 export * from './localized';
+
+// Migrated Components
+export * from './score/score.component';
+export * from './carousel/carousel.component';
+export * from './hero/hero.component';
+export * from './modal/modal.service';
+export * from './ribbon/ribbon.component';
+export * from './section/section.component';
+export * from './video-player/video-player.component';
+export * from './expand-collapse-link/expand-collapse-link.component';
+export * from './title-and-text/title-and-text.component';

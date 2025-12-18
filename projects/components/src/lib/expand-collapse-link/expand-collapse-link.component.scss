@@ -1,0 +1,24 @@
+$button-blue: #0069c8;
+
+.expand-collapse-link {
+  color: $button-blue;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (min-width: 576px) {
+  // Small screens and up
+}
+
+@media (min-width: 768px) {
+  // Medium screens and up
+}
+
+@media (min-width: 992px) {
+  // Large screens and up
+}

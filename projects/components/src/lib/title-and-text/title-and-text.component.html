@@ -1,0 +1,11 @@
+<div class="title-and-text">
+  <h2 class="title-and-text__title" *ngIf="title">{{ title }}</h2>
+  <div class="title-and-text__text" [class.title-and-text--truncated]="isTruncated">
+    {{ text }}
+    <ng-content></ng-content>
+  </div>
+  <lib-expand-collapse-link 
+    *ngIf="showExpandLink"
+    (expandCollapseClick)="handleExpandCollapse($event)">
+  </lib-expand-collapse-link>
+</div>

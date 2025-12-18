@@ -1,0 +1,28 @@
+<div class="carousel-container">
+  <div class="carousel" [class.carousel--single]="isSingleItem">
+    <div #carouselContainer class="carousel-wrapper" 
+         [style.transform]="'translateX(' + translateX + '%)'">
+      <div class="carousel__item" *ngFor="let item of items">
+        <ng-container *ngIf="item.content">
+          {{ item.content }}
+        </ng-container>
+      </div>
+    </div>
+
+    <button mat-icon-button 
+            class="nav-btn prev-slide" 
+            *ngIf="mergedConfig.nav && !isSingleItem"
+            [disabled]="!canGoPrevious"
+            (click)="previous()">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+
+    <button mat-icon-button 
+            class="nav-btn next-slide" 
+            *ngIf="mergedConfig.nav && !isSingleItem"
+            [disabled]="!canGoNext"
+            (click)="next()">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+</div>

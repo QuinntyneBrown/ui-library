@@ -1,0 +1,198 @@
+$button-blue: #0069c8;
+$gauge-width: 4em;
+$gauge-thickness: 0.5em;
+
+.hero {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f1f1f1;
+  display: block;
+  padding: 0.1px 0 0.1px 0;
+  width: 100%;
+
+  .hero__button {
+    background-color: $button-blue;
+    border-color: $button-blue;
+    color: #fff;
+    margin: 0 auto 18px;
+    display: block;
+    min-width: 170px;
+  }
+
+  .hero__button:nth-child(2) {
+    margin-bottom: 40px;
+  }
+
+  .hero__makeLogo {
+    display: block;
+    height: auto;
+    margin: 32px auto 0;
+    max-width: 90px;
+  }
+
+  .hero__makeAndModelText {
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 33px;
+    margin: 28px 0;
+    display: block;
+    text-align: center;
+  }
+
+  .hero__msrpLabel {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21px;
+    margin: 0 0 15px 0;
+    color: #8e8e8e;
+    display: block;
+    text-align: center;
+  }
+
+  .hero__msrpText {
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 33px;
+    margin: 0 0 35px 0;
+    display: block;
+    text-align: center;
+  }
+
+  .hero__carImage {
+    display: block;
+    max-width: 305px;
+    height: auto;
+    margin: 0 auto 30px;
+  }
+
+  span {
+    display: block;
+    text-align: center;
+  }
+
+  .hero_scoreGroup {
+    display: grid;
+    margin: 0 auto 30px;
+    grid-template-columns: 100px 100px;
+    max-width: 200px;
+
+    .hero__scoreContainer {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .hero__scoreContainer:nth-child(2) {
+      grid-column: 2;
+      font-size: calc(54px / 4);
+    }
+  }
+
+  .hero__guageContainer {
+    align-content: center;
+    align-items: center;
+    display: block;
+    max-width: 100%;
+    font-size: calc(75px / 4);
+    margin-top: 0;
+  }
+
+  .hero__scoreContainer {
+    display: grid;
+    grid-template-rows: 100px 1fr 1fr;
+
+    .hero__guageContainer {
+      grid-row: 1;
+    }
+
+    > span {
+      grid-row: 2;
+    }
+
+    > span:nth-child(2) {
+      grid-row: 3;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .hero {
+    .hero__container {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 100px 50px 40px 1fr 1fr;
+    }
+
+    .hero_scoreGroup {
+      grid-row: 1 / span 2;
+      grid-column: 2;
+    }
+
+    .hero__guageContainer {
+      font-size: calc(74px / 4);
+    }
+
+    .hero__msrpText,
+    .hero__msrpLabel,
+    .hero__buttonGroup,
+    .hero__makeAndModelText {
+      text-align: left;
+    }
+
+    .hero__makeLogo {
+      grid-row: 1;
+      grid-column: 1;
+      margin: 15px 0 0 0;
+    }
+
+    .hero__carImage {
+      align-self: self-end;
+      grid-row: 3 / span 2;
+      grid-column: 2;
+      max-width: 305px;
+    }
+
+    .hero__makeAndModelText {
+      grid-row: 2;
+      grid-column: 1;
+      margin: 15px 0 0 0;
+    }
+
+    .hero__msrpLabel {
+      color: #8e8e8e;
+      font-weight: 500;
+      grid-row: 3;
+      grid-column: 1;
+      line-height: 18px;
+      margin: 20px 0 0 0;
+    }
+
+    .hero__msrpText {
+      grid-row: 4;
+      grid-column: 1;
+      margin: 15px 0 0 0;
+    }
+
+    .hero__buttonGroup {
+      display: block;
+      grid-row: 5;
+      grid-column: 1 / span 2;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero__button,
+    .hero__button:nth-child(2n + 1) {
+      display: inline-block;
+      margin: 0 5px 0 5px;
+      width: 170px;
+      position: relative;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    .hero__buttonGroup {
+      grid-column: 1 / span 1;
+    }
+  }
+}

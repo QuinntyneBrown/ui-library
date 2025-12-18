@@ -1,0 +1,39 @@
+<div class="hero">
+  <div class="hero__container">
+    <img *ngIf="makeLogo" [src]="makeLogo" alt="Make Logo" class="hero__makeLogo" />
+    
+    <span class="hero__makeAndModelText">{{ makeAndModel }}</span>
+    
+    <span class="hero__msrpLabel">MSRP</span>
+    <span class="hero__msrpText">{{ msrp | currency }}</span>
+    
+    <div class="hero_scoreGroup">
+      <div class="hero__scoreContainer" *ngIf="score">
+        <div class="hero__guageContainer">
+          <span>{{ score }}</span>
+        </div>
+        <span>Score</span>
+        <span>Out of 10</span>
+      </div>
+      
+      <div class="hero__scoreContainer" *ngIf="ownerScore">
+        <div class="hero__guageContainer">
+          <span>{{ ownerScore }}</span>
+        </div>
+        <span>Owner</span>
+        <span>Score</span>
+      </div>
+    </div>
+    
+    <img *ngIf="carImage" [src]="carImage" alt="Car" class="hero__carImage" />
+    
+    <div class="hero__buttonGroup">
+      <button mat-raised-button class="hero__button" (click)="onFindCarsClick()">
+        Find Cars for Sale
+      </button>
+      <button mat-raised-button class="hero__button" (click)="onCompareClick()">
+        Compare
+      </button>
+    </div>
+  </div>
+</div>

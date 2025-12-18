@@ -1,0 +1,25 @@
+<div class="q-localized">
+  <mat-tab-group class="q-localized__tabs">
+    <mat-tab 
+      *ngFor="let cultureCode of cultureCodes" 
+      class="q-localized__tab">
+      <ng-template mat-tab-label>
+        <div class="q-localized__tab-label">
+          <span class="q-localized__tab-label-text">{{ displayWith(cultureCode) }}</span>
+          <mat-icon 
+            *ngIf="hasValue(cultureCode)"
+            class="q-localized__tab-icon q-localized__tab-icon--check">
+            check_circle
+          </mat-icon>
+        </div>
+      </ng-template>
+
+      <div class="q-localized__content">
+        <ng-container
+          *ngTemplateOutlet="templateRef; context: { cultureCode: cultureCode }">
+        </ng-container>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+

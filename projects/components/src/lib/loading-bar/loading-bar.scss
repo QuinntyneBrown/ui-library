@@ -1,0 +1,33 @@
+// Copyright (c) Quinntyne Brown. All Rights Reserved.
+// Licensed under the MIT License. See License.txt in the project root for license information.
+
+@use '@angular/material' as mat;
+
+.loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+
+  &--active {
+    height: 4px;
+  }
+
+  &__progress {
+    ::ng-deep .mdc-linear-progress__bar-inner {
+      border-top-width: 4px;
+    }
+
+    ::ng-deep .mdc-linear-progress {
+      height: 4px;
+    }
+  }
+}
+
+
+

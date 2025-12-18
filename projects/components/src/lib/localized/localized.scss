@@ -1,0 +1,114 @@
+// Copyright (c) Quinntyne Brown. All Rights Reserved.
+// Licensed under the MIT License. See License.txt in the project root for license information.
+
+@use '@angular/material' as mat;
+
+.q-localized {
+  display: block;
+  width: 100%;
+  
+  &__tabs {
+    width: 100%;
+    min-height: 400px;
+  }
+
+  &__tab {
+    position: relative;
+  }
+
+  &__tab-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__tab-label-text {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: none;
+  }
+
+  &__tab-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+
+    &--check {
+      color: #4caf50;
+    }
+  }
+
+  &__content {
+    padding: 1.5rem;
+    min-height: 300px;
+  }
+
+  // Material tab overrides using BEM
+  ::ng-deep {
+    .mat-mdc-tab-group {
+      font-family: inherit;
+    }
+
+    .mat-mdc-tab-labels {
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .mat-mdc-tab {
+      &.mat-mdc-tab-active {
+        .q-localized__tab-label-text {
+          color: #3f51b5;
+        }
+      }
+    }
+
+    .mat-mdc-tab-body-content {
+      overflow: visible;
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    &__tab-label {
+      padding: 0.5rem;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    &__tab-label-text {
+      font-size: 12px;
+    }
+
+    &__content {
+      padding: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__tabs {
+      min-height: 300px;
+    }
+
+    &__tab-label-text {
+      font-size: 11px;
+    }
+
+    &__content {
+      padding: 0.75rem;
+      min-height: 200px;
+    }
+  }
+}
+
+// Component host styling
+:host {
+  display: block;
+  width: 100%;
+}
+
+

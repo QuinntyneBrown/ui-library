@@ -1,0 +1,200 @@
+// Copyright (c) Quinntyne Brown. All Rights Reserved.
+// Licensed under the MIT License. See License.txt in the project root for license information.
+
+@use '@angular/material' as mat;
+
+.unsupported-browser {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  &__card {
+    max-width: 800px;
+    width: 100%;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__icon {
+    width: 64px;
+    height: 64px;
+    font-size: 64px;
+    color: #ff9800;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+  }
+
+  &__divider {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.12);
+    margin-bottom: 1.5rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__message {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.87);
+
+    strong {
+      font-weight: 600;
+      color: #d32f2f;
+    }
+  }
+
+  &__browsers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  &__browser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+  }
+
+  &__browser-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__browser-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 48px;
+    color: #2196f3;
+  }
+
+  &__browser-name {
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  &__button {
+    width: 100%;
+  }
+
+  &__note {
+    font-size: 0.875rem;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    font-style: italic;
+    margin: 0;
+  }
+}
+
+// Responsive breakpoints
+@media (max-width: 768px) {
+  .unsupported-browser {
+    padding: 1.5rem;
+
+    &__card {
+      padding: 1.5rem;
+    }
+
+    &__icon {
+      width: 56px;
+      height: 56px;
+      font-size: 56px;
+    }
+
+    &__title {
+      font-size: 1.75rem;
+    }
+
+    &__browsers {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    &__browser {
+      padding: 1rem;
+    }
+
+    &__browser-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 40px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .unsupported-browser {
+    padding: 1rem;
+
+    &__card {
+      padding: 1rem;
+    }
+
+    &__icon {
+      width: 48px;
+      height: 48px;
+      font-size: 48px;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+    }
+
+    &__message {
+      font-size: 0.875rem;
+    }
+
+    &__browsers {
+      grid-template-columns: 1fr;
+    }
+
+    &__browser {
+      padding: 0.75rem;
+    }
+
+    &__browser-name {
+      font-size: 0.875rem;
+    }
+  }
+}
+
+
+

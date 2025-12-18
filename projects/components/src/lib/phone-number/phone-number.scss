@@ -1,0 +1,56 @@
+// Copyright (c) Quinntyne Brown. All Rights Reserved.
+// Licensed under the MIT License. See License.txt in the project root for license information.
+
+@use '@angular/material' as mat;
+
+.phone-number {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+
+  &__country-code {
+    width: 120px;
+    flex-shrink: 0;
+  }
+
+  &__input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-family: inherit;
+    padding: 0;
+    background: transparent;
+    color: inherit;
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.42);
+    }
+
+    &:disabled {
+      color: rgba(0, 0, 0, 0.38);
+      cursor: not-allowed;
+    }
+  }
+
+  &__option {
+    font-size: 0.875rem;
+  }
+}
+
+// Responsive breakpoints
+@media (max-width: 480px) {
+  .phone-number {
+    &__country-code {
+      width: 100px;
+    }
+
+    &__input {
+      font-size: 0.875rem;
+    }
+  }
+}
+
+
+

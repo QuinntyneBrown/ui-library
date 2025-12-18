@@ -1,0 +1,29 @@
+<div class="phone-number">
+  <mat-select
+    class="phone-number__country-code"
+    [formControl]="countryCodeControl"
+    [disabled]="disabled"
+  >
+    <mat-option
+      *ngFor="let country of countryCodes"
+      [value]="country.code"
+      class="phone-number__option"
+    >
+      {{ country.code }} ({{ country.country }})
+    </mat-option>
+  </mat-select>
+
+  <input
+    #numberInput
+    type="tel"
+    class="phone-number__input"
+    [formControl]="numberControl"
+    [placeholder]="placeholder"
+    [disabled]="disabled"
+    [required]="required"
+    (input)="handleInput()"
+    (blur)="handleInput()"
+  />
+</div>
+
+

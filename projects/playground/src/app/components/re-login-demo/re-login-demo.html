@@ -1,0 +1,13 @@
+<div class="demo-container">
+  <h2>Re-Login Component</h2>
+  <p class="demo-description">
+    Session timeout re-authentication dialog with pre-filled username.
+  </p>
+  
+  <div class="demo-preview">
+    <q-re-login 
+      [username]="username"
+      (login)="handleLogin($event)">
+    </q-re-login>
+  </div>
+</div>

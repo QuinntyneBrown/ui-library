@@ -1,0 +1,20 @@
+<div class="demo-container">
+  <h2>Loading Bar Component</h2>
+  <p class="demo-description">
+    HTTP progress indicator with service integration supporting determinate and indeterminate modes.
+  </p>
+  
+  <div class="demo-preview">
+    <q-loading-bar></q-loading-bar>
+    
+    <div class="controls">
+      <button mat-raised-button color="primary" (click)="startLoading()">Start</button>
+      <button mat-raised-button (click)="stopLoading()">Stop</button>
+      <button mat-raised-button (click)="setProgress(25)">25%</button>
+      <button mat-raised-button (click)="setProgress(50)">50%</button>
+      <button mat-raised-button (click)="setProgress(75)">75%</button>
+      <button mat-raised-button color="accent" (click)="completeLoading()">Complete</button>
+      <button mat-raised-button color="warn" (click)="resetLoading()">Reset</button>
+    </div>
+  </div>
+</div>

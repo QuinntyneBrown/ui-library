@@ -1,0 +1,17 @@
+<div class="demo-container">
+  <h2>Phone Number Component</h2>
+  <p class="demo-description">
+    International phone number input with country code selection and MatFormFieldControl integration.
+  </p>
+  
+  <div class="demo-preview">
+    <mat-form-field appearance="outline" style="width: 100%; max-width: 400px;">
+      <mat-label>Phone Number</mat-label>
+      <q-phone-number 
+        [formControl]="phoneControl"
+        placeholder="555-1234"
+        [required]="true">
+      </q-phone-number>
+    </mat-form-field>
+  </div>
+</div>

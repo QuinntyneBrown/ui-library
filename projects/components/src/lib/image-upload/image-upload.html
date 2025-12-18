@@ -1,0 +1,63 @@
+<div class="image-upload">
+  <input
+    id="file-input"
+    type="file"
+    accept="image/*"
+    class="image-upload__file-input"
+    (change)="onFileSelected($event)"
+  />
+
+  <div
+    class="image-upload__drop-zone"
+    [class.image-upload__drop-zone--dragging]="isDragging"
+    [class.image-upload__drop-zone--has-image]="imagePreview"
+    (dragover)="onDragOver($event)"
+    (dragleave)="onDragLeave($event)"
+    (drop)="onDrop($event)"
+    (click)="!imagePreview && triggerFileInput()"
+  >
+    <div *ngIf="!imagePreview" class="image-upload__placeholder">
+      <mat-icon class="image-upload__icon">cloud_upload</mat-icon>
+      <p class="image-upload__text">{{ label }}</p>
+      <p class="image-upload__hint">Drag and drop or click to select</p>
+    </div>
+
+    <div *ngIf="imagePreview" class="image-upload__preview-container">
+      <img
+        [src]="imagePreview"
+        alt="Preview"
+        class="image-upload__preview-image"
+      />
+      
+      <div class="image-upload__overlay">
+        <div class="image-upload__actions">
+          <button
+            mat-mini-fab
+            color="primary"
+            type="button"
+            class="image-upload__action-button"
+            (click)="triggerFileInput(); $event.stopPropagation()"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          
+          <button
+            mat-mini-fab
+            color="warn"
+            type="button"
+            class="image-upload__action-button"
+            (click)="removeImage(); $event.stopPropagation()"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="image-upload__info">
+    Maximum dimensions: {{ maxWidth }}x{{ maxHeight }}px
+  </p>
+</div>
+
+

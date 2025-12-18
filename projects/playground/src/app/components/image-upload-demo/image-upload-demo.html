@@ -1,0 +1,15 @@
+<div class="demo-container">
+  <h2>Image Upload Component</h2>
+  <p class="demo-description">
+    Drag & drop image upload with automatic resize, preview, and base64 encoding.
+  </p>
+  
+  <div class="demo-preview">
+    <q-image-upload 
+      [formControl]="imageControl"
+      [maxWidth]="800"
+      [maxHeight]="600"
+      label="Upload Profile Picture">
+    </q-image-upload>
+  </div>
+</div>

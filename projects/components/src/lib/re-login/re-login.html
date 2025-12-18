@@ -1,0 +1,67 @@
+<div class="re-login">
+  <mat-card class="re-login__card">
+    <div class="re-login__header">
+      <mat-icon class="re-login__icon">lock</mat-icon>
+      <h2 class="re-login__title">Session Timeout</h2>
+    </div>
+
+    <div class="re-login__divider"></div>
+
+    <p class="re-login__message">
+      Your session has expired. Please re-enter your password to continue.
+    </p>
+
+    <form class="re-login__form" [formGroup]="reLoginForm">
+      <mat-form-field class="re-login__field" appearance="outline">
+        <mat-label>Email Address</mat-label>
+        <input
+          matInput
+          type="email"
+          placeholder="Email Address"
+          formControlName="username"
+          class="re-login__input"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="re-login__field" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+          class="re-login__input"
+        />
+        <mat-error>Password is required</mat-error>
+      </mat-form-field>
+
+      <div class="re-login__actions">
+        <button
+          *ngIf="!isProcessing"
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="re-login__button"
+          [disabled]="!isFormValid"
+          (click)="loginClick()"
+        >
+          Login
+        </button>
+
+        <button
+          *ngIf="isProcessing"
+          mat-raised-button
+          color="primary"
+          type="button"
+          class="re-login__button q-re-login__button--processing"
+          disabled
+        >
+          <mat-icon class="re-login__spinner">refresh</mat-icon>
+          Processing
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>
+
+

@@ -1,0 +1,52 @@
+<div class="unsupported-browser" *ngIf="!browserInfo.isSupported">
+  <mat-card class="unsupported-browser__card">
+    <div class="unsupported-browser__header">
+      <mat-icon class="unsupported-browser__icon">warning</mat-icon>
+      <h1 class="unsupported-browser__title">Unsupported Browser</h1>
+    </div>
+
+    <div class="unsupported-browser__divider"></div>
+
+    <div class="unsupported-browser__content">
+      <p class="unsupported-browser__message">
+        You are using <strong>{{ browserInfo.name }} {{ browserInfo.version }}</strong>, which is not supported by this application.
+      </p>
+
+      <p class="unsupported-browser__message">
+        For the best experience, please upgrade to one of the following modern browsers:
+      </p>
+
+      <div class="unsupported-browser__browsers">
+        <div
+          *ngFor="let browser of supportedBrowsers"
+          class="unsupported-browser__browser"
+        >
+          <div class="unsupported-browser__browser-content">
+            <mat-icon class="unsupported-browser__browser-icon">
+              {{ browser.icon }}
+            </mat-icon>
+            <span class="unsupported-browser__browser-name">
+              {{ browser.name }}
+            </span>
+          </div>
+          
+          <button
+            mat-raised-button
+            color="primary"
+            type="button"
+            class="unsupported-browser__button"
+            (click)="openBrowserLink(browser.url)"
+          >
+            Download
+          </button>
+        </div>
+      </div>
+
+      <p class="unsupported-browser__note">
+        After upgrading, please refresh this page to continue.
+      </p>
+    </div>
+  </mat-card>
+</div>
+
+

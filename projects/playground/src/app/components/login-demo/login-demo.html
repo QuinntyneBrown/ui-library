@@ -1,0 +1,13 @@
+<div class="demo-container">
+  <h2>Login Component</h2>
+  <p class="demo-description">
+    Full authentication with username/password and new password setup flow.
+  </p>
+  
+  <div class="demo-preview">
+    <q-login 
+      (loginSuccessful)="handleLoginSuccess($event)"
+      (showForgotPassword)="handleShowForgotPassword($event)">
+    </q-login>
+  </div>
+</div>

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ExpandCollapseLinkComponent } from '../expand-collapse-link/expand-collapse-link.component';
 
 @Component({
-  selector: 'lib-title-and-text',
+  selector: 'q-title-and-text',
   standalone: true,
   imports: [CommonModule, ExpandCollapseLinkComponent],
   templateUrl: './title-and-text.component.html',

@@ -10,7 +10,7 @@ export interface RibbonItem {
 }
 
 @Component({
-  selector: 'lib-ribbon',
+  selector: 'q-ribbon',
   standalone: true,
   imports: [CommonModule, MatButtonModule, MatIconModule],
   templateUrl: './ribbon.component.html',

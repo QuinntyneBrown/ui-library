@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'lib-expand-collapse-link',
+  selector: 'q-expand-collapse-link',
   standalone: true,
   imports: [CommonModule, MatButtonModule],
   templateUrl: './expand-collapse-link.component.html',

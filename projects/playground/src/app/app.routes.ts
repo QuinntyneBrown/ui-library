@@ -12,6 +12,15 @@ import { LoadingBarDemoComponent } from './components/loading-bar-demo/loading-b
 import { PhoneNumberDemoComponent } from './components/phone-number-demo/phone-number-demo';
 import { UnsupportedBrowserDemoComponent } from './components/unsupported-browser-demo/unsupported-browser-demo';
 import { LocalizedDemoComponent } from './components/localized-demo/localized-demo';
+import { CarouselDemoComponent } from './components/carousel-demo/carousel-demo';
+import { ExpandCollapseLinkDemoComponent } from './components/expand-collapse-link-demo/expand-collapse-link-demo';
+import { HeroDemoComponent } from './components/hero-demo/hero-demo';
+import { HeaderDemoComponent } from './components/header-demo/header-demo';
+import { RibbonDemoComponent } from './components/ribbon-demo/ribbon-demo';
+import { ScoreDemoComponent } from './components/score-demo/score-demo';
+import { SectionDemoComponent } from './components/section-demo/section-demo';
+import { TitleAndTextDemoComponent } from './components/title-and-text-demo/title-and-text-demo';
+import { VideoPlayerDemoComponent } from './components/video-player-demo/video-player-demo';
 
 export const routes: Routes = [
   {
@@ -23,16 +32,25 @@ export const routes: Routes = [
     path: 'components',
     component: ComponentsComponent,
     children: [
-      { path: '', redirectTo: 'forgot-password', pathMatch: 'full' },
+      { path: '', redirectTo: 'carousel', pathMatch: 'full' },
+      { path: 'carousel', component: CarouselDemoComponent },
+      { path: 'expand-collapse-link', component: ExpandCollapseLinkDemoComponent },
       { path: 'forgot-password', component: ForgotPasswordDemoComponent },
-      { path: 'reset-password', component: ResetPasswordDemoComponent },
-      { path: 'login', component: LoginDemoComponent },
-      { path: 're-login', component: ReLoginDemoComponent },
+      { path: 'header', component: HeaderDemoComponent },
+      { path: 'hero', component: HeroDemoComponent },
       { path: 'image-upload', component: ImageUploadDemoComponent },
       { path: 'loading-bar', component: LoadingBarDemoComponent },
+      { path: 'localized', component: LocalizedDemoComponent },
+      { path: 'login', component: LoginDemoComponent },
       { path: 'phone-number', component: PhoneNumberDemoComponent },
+      { path: 're-login', component: ReLoginDemoComponent },
+      { path: 'reset-password', component: ResetPasswordDemoComponent },
+      { path: 'ribbon', component: RibbonDemoComponent },
+      { path: 'score', component: ScoreDemoComponent },
+      { path: 'section', component: SectionDemoComponent },
+      { path: 'title-and-text', component: TitleAndTextDemoComponent },
       { path: 'unsupported-browser', component: UnsupportedBrowserDemoComponent },
-      { path: 'localized', component: LocalizedDemoComponent }
+      { path: 'video-player', component: VideoPlayerDemoComponent }
     ]
   }
 ];

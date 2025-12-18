@@ -10,7 +10,7 @@ declare global {
 }
 
 @Component({
-  selector: 'lib-video-player',
+  selector: 'q-video-player',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './video-player.component.html',

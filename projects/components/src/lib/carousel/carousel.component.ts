@@ -21,7 +21,7 @@ export interface CarouselConfig {
 }
 
 @Component({
-  selector: 'lib-carousel',
+  selector: 'q-carousel',
   standalone: true,
   imports: [CommonModule, MatButtonModule, MatIconModule],
   templateUrl: './carousel.component.html',

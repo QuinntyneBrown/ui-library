@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'lib-score',
+  selector: 'q-score',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './score.component.html',

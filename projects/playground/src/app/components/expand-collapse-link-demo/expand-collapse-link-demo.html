@@ -1,0 +1,18 @@
+<div class="demo-container">
+  <h2>Expand/Collapse Link Component</h2>
+  <p class="demo-description">
+    Toggle link for expanding and collapsing content sections.
+  </p>
+  
+  <div class="demo-preview">
+    <q-expand-collapse-link 
+      onCaption="Show More" 
+      offCaption="Show Less"
+      (expandCollapseClick)="handleExpandCollapse($event)">
+    </q-expand-collapse-link>
+    
+    <div class="content" [class.expanded]="isExpanded">
+      <p>This is collapsible content that appears when the link is clicked.</p>
+    </div>
+  </div>
+</div>
